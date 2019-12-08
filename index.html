@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Library-1</title>
+</head>
+<body>
+    <div id="main" class="container-fluid my-5">
+        <div class="row">
+            <div class="col-10 mx-auto" id="mainContent">
+                <div id="header">
+                    <h1 class="text-center">My Library</h1>
+                </div>
+                <div class="align-self-center d-flex justify-content-around" style="border-bottom: 1px solid #ff9900"> 
+                    <input type="text" placeholder="Book Title" id="bookTitle">
+                    <input type="text" placeholder="Book Author" id="bookAuthor">
+                    <input type="number" placeholder="Pages" id="bookPages">
+                    <button id="addBookBtn" class="disabled">Add book</button>
+                </div>
+                <div id="cardsContainer" class="my-3 d-flex flex-wrap">
+                </div>
+                <div class="fixed-bottom ml-2">
+                    <p>Books read: <span id="booksReadCounterText">0</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="library.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+
+<style>
+body {
+    background: url(old-books-436498_1920.jpg) fixed center;
+    color: #ff9900;
+}
+input {
+    background-color: #ffebcc;
+    border: 1px solid #ff9900;
+    color: #ff9900;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+button {
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding: 5px 10px;
+}
+#mainContent {
+    border: 3px solid #ff9900;
+    min-height: 80vh;
+    backdrop-filter: grayscale(50%);
+}
+#header {
+    border-bottom: 2px solid #ff9900;
+    height: 60px;
+}
+.disabled {
+    background-color: #ffebcc;
+    color: #ff9900;
+}
+.notDisabled {
+    border: 1px solid #ff9900;
+    background-color: #ff9900;
+    color: #ffebcc;
+}
+.card {
+    width: 25%;
+    color: #ffebcc;
+    font-weight: bolder;
+    text-align: center;
+    cursor: pointer;
+}
+.toRead {
+    background-color: #ff9900;
+    border: 3px solid #ffebcc;
+    font-size: 1.1em;
+}
+.haveRead {
+    background-color: #ffebcc;
+    border: 3px solid #ff9900;
+    color: #ff9900;
+    font-size: 1.1em;
+    opacity: 0.75;
+}
+</style>
