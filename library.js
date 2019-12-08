@@ -60,6 +60,8 @@ class MyLibrary {
             return this.deleteBook(book, bookDiv)
         }
         book.readYet = !book.readYet
+        this.booksReadCounter++
+            document.getElementById('booksReadCounterText').innerHTML = this.booksReadCounter
     }
     deleteBook = (book, bookDiv) => {
         const findBook = this.myBooks.findIndex((eachBook) => {
@@ -68,14 +70,12 @@ class MyLibrary {
         if (this.myBooks[findBook] && confirm('Delete book out of library or cancel to set to unread?')) {
             this.myBooks.splice(findBook, 1)
             bookDiv.style.display = 'none'
-            this.booksReadCounter++
-            document.getElementById('booksReadCounterText').innerHTML = this.booksReadCounter
         } else {
             book.readYet = !book.readYet
             bookDiv.classList.remove('haveRead')
             bookDiv.classList.add('toRead')
+            this.booksReadCounter--
+            document.getElementById('booksReadCounterText').innerHTML = this.booksReadCounter
         }
     }
 }
-
-
